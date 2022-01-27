@@ -62,7 +62,8 @@ def fast_sigmoid_activation(x):
     .. math::
         y = \frac{x}{1+\lvert x \rvert}
     
-    It can be used to reduce the amount of hardware resources needed to implement a Sigmoid function.
+    It can be used to reduce the amount of hardware resources needed
+    to implement a Sigmoid function.
 
     Parameters
     ----------
@@ -112,7 +113,8 @@ def approximate_sigmoid_activation(x, alpha=0.001):
     return 0.5 * (x * alpha / (1 + np.abs(x * alpha))) + 0.5
 
 def ramp_activation(x, bound=1):
-    '''A modified ReLU activation where the maximum (minimum) value for the input is capped at a specified value.
+    '''A modified ReLU activation where the maximum (minimum) value
+    for the input is capped at a specified value.
 
     Parameters
     ----------
@@ -124,6 +126,7 @@ def ramp_activation(x, bound=1):
     Returns
     -------
     numpy.ndarray
-        A tensor having the same shape of the input tensor, where values are the result of the ramp activation.
+        A tensor having the same shape of the input tensor, where
+        values are the result of the ramp activation.
     '''
     return np.maximum(-bound, np.minimum(bound, x))
