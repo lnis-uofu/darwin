@@ -35,7 +35,7 @@ The `darwin` framework can be used as a typical Python package. For instance, in
 
 will leverage the `tanh_activation` function declared in the `activations` module to generate the result of the `tanh` operation, e.g., 0.462117 in this specific example. In the same way, all other modules can be referenced in any other Python script.
 
-For additional reference, the `examples` directory contains a few Jupyter Notebooks where RCNs are test on classification tasks on audio and image datasets.
+For additional reference, the `examples` directory contains a few Jupyter Notebooks where RCNs are tested on classification tasks on audio and image datasets.
 
 ## Documentation
 The `docs` folder contains source files to build the documentation. To do so, just `cd` into `docs` and issue the following command:
