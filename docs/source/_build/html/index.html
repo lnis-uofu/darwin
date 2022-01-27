@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Welcome to Darwin’s documentation! &mdash; Darwin 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Darwin
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to Darwin’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Darwin</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to Darwin’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-darwin-s-documentation">
+<h1>Welcome to Darwin’s documentation!<a class="headerlink" href="#welcome-to-darwin-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-darwin.networks"></span><p>Darwin: A Design Automation framework for reservoir computing</p>
+<dl class="py class">
+<dt id="darwin.networks.EchoStateNetwork">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">darwin.networks.</span></code><code class="sig-name descname"><span class="pre">EchoStateNetwork</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neurons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparsity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectral_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbit_quant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>Echo State Network with no feedback weights and no teacher signal. Dynamic systems simulations should not leverage this model. Classification and regression tasks can use multi-level fully-connected layers as a readout in order to solve complex prediction tasks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_inputs</strong> (<em>int</em>) – The number of input values.</p></li>
+<li><p><strong>n_neurons</strong> (<em>int</em>) – Value indicating how many neurons have to be used in the hidden layer.</p></li>
+<li><p><strong>sparsity</strong> (<em>float</em>) – Percentage of connections to be removed in the hidden layer.</p></li>
+<li><p><strong>spectral_radius</strong> (<em>float</em>) – Adjusting factor for hidden neuronal connections.</p></li>
+<li><p><strong>readout_layers</strong> (<em>dict</em>) – Collection of dictionaries indicating the structure.and parameters of dense layers used for the readout implementation.</p></li>
+<li><p><strong>readout_optimizer</strong> (<em>keras.optimizers</em>) – Function that belongs to the Keras optimizer library.</p></li>
+<li><p><strong>readout_loss</strong> (<em>keras.losses</em>) – Function that belongs to the Keras loss functions library.</p></li>
+<li><p><strong>readout_metrics</strong> (<em>keras.metrics</em>) – Function that belongs to the Keras metrics library.</p></li>
+<li><p><strong>nbit_quant</strong> (<em>int</em><em>, </em><em>defaults to None</em>) – Number of bits used for the quantization. None indicates full precision will be used.</p></li>
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – Initial value for the random number generator.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.fit">
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for readout fit function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_train</strong> (<em>numpy.ndarray</em>) – Tensor representing the training set.</p></li>
+<li><p><strong>y_train</strong> (<em>numpy.ndarray</em>) – Tensor representing the training labels.</p></li>
+<li><p><strong>X_val</strong> (<em>numpy.ndarray</em>) – Tensor representing the validation set.</p></li>
+<li><p><strong>y_val</strong> (<em>numpy.ndarray</em>) – Tensor representing the validation labels.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Dimension of the training batch.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – Number of training epochs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.initialize_network">
+<code class="sig-name descname"><span class="pre">initialize_network</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.initialize_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the hidden layer with user’s specified parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.quantize_apply">
+<code class="sig-name descname"><span class="pre">quantize_apply</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.quantize_apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a symmetric quantization on the parameters of the hidden layer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.relu_activation">
+<code class="sig-name descname"><span class="pre">relu_activation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.relu_activation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return arrays with the results of <cite>pyfunc</cite> broadcast (vectorized) over
+<cite>args</cite> and <cite>kwargs</cite> not in <cite>excluded</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.score">
+<code class="sig-name descname"><span class="pre">score</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Comptues the accuracy score of an RC Network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y_true</strong> (<em>numpy.ndarray</em>) – Tensor representing actual labels.</p></li>
+<li><p><strong>y_pred</strong> (<em>numpy.ndarray</em>) – Tensor representing predicted labels.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Ratio between correctly classified samples and the over all number of samples.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.networks.EchoStateNetwork.symmetric_quantization">
+<code class="sig-name descname"><span class="pre">symmetric_quantization</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.networks.EchoStateNetwork.symmetric_quantization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return arrays with the results of <cite>pyfunc</cite> broadcast (vectorized) over
+<cite>args</cite> and <cite>kwargs</cite> not in <cite>excluded</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-darwin.layers.readout"></span><dl class="py class">
+<dt id="darwin.layers.readout.MLDense">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">darwin.layers.readout.</span></code><code class="sig-name descname"><span class="pre">MLDense</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_inputs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_loss</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readout_metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbit_quant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.layers.readout.MLDense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of a readout layer consisting in a multi-layer fully-connected classifier or regressor. This class is meant to be used only in combination with objects derived from one of the darwin.networks classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_inputs</strong> (<em>int</em>) – The number of input values for the readout layer</p></li>
+<li><p><strong>readout_layers</strong> (<em>dict</em>) – Collection of dictionaries indicating the structure and parameters of dense layers used for the readout implementation</p></li>
+<li><p><strong>readout_optimizer</strong> (<em>keras.optimizers</em>) – Function that belongs to the Keras optimizer library</p></li>
+<li><p><strong>readout_loss</strong> (<em>keras.losses</em>) – Function that belongs to the Keras loss functions library</p></li>
+<li><p><strong>readout_metrics</strong> (<em>keras.metrics</em>) – Function that belongs to the Keras metrics library</p></li>
+<li><p><strong>nbit_quant</strong> (<em>int</em>) – Number of bits used for the quantization. None indicates full precision will be used</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="darwin.layers.readout.MLDense.fit">
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#darwin.layers.readout.MLDense.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wrapper for Keras’ fit function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X_train</strong> (<em>numpy.ndarray</em>) – Tensor representing the training set.</p></li>
+<li><p><strong>y_train</strong> (<em>numpy.ndarray</em>) – Tensor representing the training labels.</p></li>
+<li><p><strong>X_val</strong> (<em>numpy.ndarray</em>) – Tensor representing the validation set.</p></li>
+<li><p><strong>y_val</strong> (<em>numpy.ndarray</em>) – Tensor representing the validation labels.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – Dimension of the training batch.</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – Number of training epochs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="darwin.layers.readout.MLDense.init_readout">
+<code class="sig-name descname"><span class="pre">init_readout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#darwin.layers.readout.MLDense.init_readout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the readout layer with user’s specified parameters</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Valerio.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
