@@ -11,10 +11,10 @@ from darwin.quantization import fxp_quantization, downcast
 from darwin.activations import *
 
 class EchoStateNetwork:
-    '''Echo State Network with no teacher signal capable of solving classification and
-    regression tasks. Different types of readout layers can be specified via the ``readout_layer``
-    parameter. In particular, to use a multi-layer dense readout, the following parameters
-    can be specified:
+    '''Echo State Network with no teacher signal capable of solving classification
+    and regression tasks. Different types of readout layers can be specified
+    via the ``readout_layer`` parameter. In particular, to use a multi-layer
+    dense readout, the following parameters can be specified:
 
     - **type** (str): Typology of readout (it must be the class name of the readout as reported in darwin.layers.readout).
     - **hyper_params** (dict): Dictionary indicating the structure and parameters of dense layers used for the readout implementation.
@@ -39,7 +39,8 @@ class EchoStateNetwork:
             }
         }
     
-    Alternatively, a single-layer dense readout can be intantiated as in the following example:
+    Alternatively, a single-layer dense readout can be instantiated
+    as in the following example:
 
     .. code-block:: python
 
@@ -62,19 +63,26 @@ class EchoStateNetwork:
     spectral_radius : float
         Adjusting factor for hidden neuronal connections.
     activation : darwin.activation
-        One of the activation functions in darwin.activation to be used for neurons in the hidden layer.
+        One of the activation functions in darwin.activation to be used for
+        neurons in the hidden layer.
     readout_layer : dict
-        Description of the readout layer. Depending on the type of readout, different parameters can be included as a dictionary. See the documentation for more details.
+        Description of the readout layer. Depending on the type of readout,
+        different parameters can be included as a dictionary. See the documentation
+        for more details.
     nbit_quant : int
-        Number of bits used for the quantization. None indicates full precision will be used.
+        Number of bits used for the quantization. None indicates full
+        precision will be used.
     feedforward : bool
         Wether to use a feedforward connection of the inputs to the readout layer.
     feedback : bool
         If True, feedback connections are used.
     continuation : bool
-        If True, states are initialized to the latest state achieved during the training phase.
+        If True, states are initialized to the latest state achieved
+        during the training phase.
     dynamic_update : bool
-        If True, states update at time t is performed using excitatory states at time t-1. Otherwise, the same states are used to generate any future states update.
+        If True, states update at time t is performed using excitatory states at
+        time t-1. Otherwise, the same states are used to generate any
+        future states update.
     seed : int
         Initial value for the random number generator.
     '''
@@ -181,7 +189,10 @@ class EchoStateNetwork:
         Returns
         -------
         tf.history or None
-            A Tensorflow history object containing a record of training loss values and metrics values at successive epochs, as well as validation loss values and validation metrics values. None is returned when the selected readout does not provide a history object.
+            A Tensorflow history object containing a record of training loss values
+            and metrics values at successive epochs, as well as validation loss values
+            and validation metrics values. None is returned when the selected readout
+            does not provide a history object.
         '''
 
         partial_training = self.states_update(X_train)
@@ -210,7 +221,8 @@ class EchoStateNetwork:
         Returns
         -------
         float
-            Ratio between correctly classified samples and the over all number of samples.
+            Ratio between correctly classified samples and the over all
+            number of samples.
 
         '''
         return accuracy_score(y_true, y_pred)
@@ -277,7 +289,8 @@ class EchoStateNetwork:
         return excitatory_states
 
     def summary(self):
-        '''Helper function to print the structure of the model (inspired and leveraging Tensorflow's model.summary() function).
+        '''Helper function to print the structure of the model (inspired
+        by and based upon TensorFlow's model.summary() function).
         '''
         positions = [.45, .85, 1.]
 
@@ -291,7 +304,9 @@ class EchoStateNetwork:
         self.readout.readout.summary(line_length=80)
 
     def print_summary_row(self, fields, positions):
-        '''Helper function to annotate the structure of the model, including both the hidden and the readout layers. Note that this function is borrowed from Tensortflow's model.summary() function.
+        '''Helper function to annotate the structure of the model, including both
+        the hidden and the readout layers. Note that this function is borrowed from
+        Tensortflow's model.summary() function.
 
         Parameters
         ----------

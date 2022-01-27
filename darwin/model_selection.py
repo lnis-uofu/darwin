@@ -111,8 +111,10 @@ class GridSearchEchoStateNetwork():
         return best_acc, best_conf
 
     def execute(self, hyper_values):
-        '''Core function of the grid search analysis, where EchoStateNetwork objects are created and evaluated.
-        Performances are annotated in order to determine the best hyper-parameter configuration.
+        '''Core function of the grid search analysis, where EchoStateNetwork
+        objects are created and evaluated.
+        Performances are annotated in order to determine the best
+        hyper-parameter configuration.
 
         Parameters
         ----------
@@ -139,7 +141,14 @@ class GridSearchEchoStateNetwork():
             readout_metrics=self.readout_metrics,
             seed=self.seed
         )
-        history = esn.fit(X_train=self.X_train, y_train=self.y_train, X_val=self.X_test, y_val=self.y_test, batch_size=self.batch_size, epochs=self.epochs)
+        history = esn.fit(
+            X_train=self.X_train,
+            y_train=self.y_train,
+            X_val=self.X_test,
+            y_val=self.y_test,
+            batch_size=self.batch_size,
+            epochs=self.epochs
+        )
         print(f'Closing {getpid()}')
         return {
             'accuracy': history.history['accuracy'][0],

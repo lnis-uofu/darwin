@@ -15,12 +15,14 @@ def fxp_quantization(fp, nbit_quant, bin_repr=False):
     nbit_quant : int
         Number of word bits (first bit is reserved for the sign).
     bin_repr : bool, optional
-        If True the binary two's complement representation is returned, otherwise the quantized number is returned as is, by default False.
+        If True the binary two's complement representation is returned,
+        otherwise the quantized number is returned as is, by default False.
 
     Returns
     -------
     float or str
-        A float representing the quantized input number, or a string that represents the binary encoding of the quantized input number.
+        A float representing the quantized input number, or a string that
+        represents the binary encoding of the quantized input number.
     '''
 
     qfp = Fxp(fp, signed=True, n_word=nbit_quant, n_frac=nbit_quant - 1)
@@ -30,7 +32,8 @@ def fxp_quantization(fp, nbit_quant, bin_repr=False):
         return qfp.get_val()
 
 def downcast(fp, nbit_quant):
-    '''Applies a truncation on LSBs in order to downcast 32-bit words over the specified amount of bits.
+    '''Applies a truncation on LSBs in order to downcast 32-bit words over
+    the specified amount of bits.
 
     Parameters
     ----------

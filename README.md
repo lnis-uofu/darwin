@@ -1,5 +1,6 @@
-# Darwin
-A Design Automation Framework for Reservoir Computing Networks
+# Darwin: A Design Automation Framework for Reservoir Computing Networks
+
+![python package workflow](https://github.com/lnis-uofu/darwin/actions/workflows/python-package.yml/badge.svg)
 
 ## Overview
 The `Darwin` Python package allows to efficiently design, train, and analyze quantized _Reservoir Computing Networks_ (RCNs). Current features include:
