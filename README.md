@@ -1,6 +1,7 @@
 # Darwin: A Design Automation Framework for Reservoir Computing Networks
 
 ![python package workflow](https://github.com/lnis-uofu/darwin/actions/workflows/python-package.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 The `Darwin` Python package allows to efficiently design, train, and analyze quantized _Reservoir Computing Networks_ (RCNs). Current features include:
@@ -9,9 +10,10 @@ The `Darwin` Python package allows to efficiently design, train, and analyze qua
 3. Routines for exporting quantized RCN's weights to text format, which can later be used for hardware simulations.
 
 ## Installation
-First, create a local virtual environment via [Anaconda](https://www.anaconda.com/), [Conda](https://docs.conda.io/en/latest/) or [venv](https://docs.python.org/3/library/venv.html). For instance, the following instruction refers to `conda`, and it will create a virtual environment named `darwin-test` having Python 3.9:
+First, create a local virtual environment via [Anaconda](https://www.anaconda.com/), [Conda](https://docs.conda.io/en/latest/) or [venv](https://docs.python.org/3/library/venv.html). For instance, the following instructions refer to `conda`, and they will create and activate a virtual environment named `darwin-test` having Python 3.9:
 
     conda create --name darwin-test python=3.9
+    conda activate darwin-test
 
 After setting-up the local virtual environment, clone the repository and `cd` into the root of the project, i.e.:
 
@@ -36,11 +38,16 @@ The `darwin` framework can be used as a typical Python package. For instance, in
 
 will leverage the `tanh_activation` function declared in the `activations` module to generate the result of the `tanh` operation, e.g., 0.462117 in this specific example. In the same way, all other modules can be referenced in any other Python script.
 
-For additional reference, the `examples` directory contains a few Jupyter Notebooks where RCNs are tested on classification tasks on audio and image datasets.
+For additional reference, the `examples` directory contains a few Jupyter Notebooks where RCNs are tested on some open-source audio and image datasets.
 
 ## Documentation
 The `docs` folder contains source files to build the documentation. To do so, just `cd` into `docs` and issue the following command:
 
     make html
 
-A new `build` directory will be generated. It will contain the documentation static website, which can be examined by opening the `build/html/index.html` file with any web browser.
+A new `build` directory will be generated. It will contain static website of the documentation, which can be examined by opening the `build/html/index.html` file with any web browser.
+
+## Other contributors
+In addition to the contributors listed in this GitHub repository, this package was also made possible thanks to the contribution of:
+- Cl&eacute;ment Cazaban ([@ClementCazaban](https://github.com/ClementCazaban))
+- Benjamin Rigaud
